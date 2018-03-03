@@ -1,9 +1,10 @@
 package com.aliciareesealex.squirrelhack;
 
-import org.junit.Test;
-import java.util.HashMap;
+import com.aliciareesealex.squirrelhack.model.Event;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by ducoterra on 3/3/2018.
@@ -12,7 +13,7 @@ public class EventTest {
     private Event e;
 
     @Test
-    public void decrement() throws Exception {
+    public void decrement() {
         e = new Event("Test");
         assertEquals(e.decrement(), false);
         assertEquals(e.increment(), true);
@@ -20,13 +21,13 @@ public class EventTest {
     }
 
     @Test
-    public void getCount() throws Exception {
+    public void getCount() {
         e = new Event("test");
         assertEquals(e.getCount(), 0);
     }
 
     @Test
-    public void increment() throws Exception {
+    public void increment() {
         e = new Event("Test");
         assertEquals(e.getCount(), 0);
         e.increment();
@@ -34,7 +35,7 @@ public class EventTest {
     }
 
     @Test
-    public void resetCount() throws Exception {
+    public void resetCount() {
         e = new Event("Test");
         e.increment();
         assertEquals(e.getCount(), 1);
@@ -43,13 +44,13 @@ public class EventTest {
     }
 
     @Test
-    public void getName() throws Exception {
+    public void getName() {
         e = new Event("Test");
         assertEquals(e.getName(), "Test");
     }
 
     @Test
-    public void setName() throws Exception {
+    public void setName() {
         e = new Event("Test");
         assertEquals(e.getName(), "Test");
         e.setName("New");

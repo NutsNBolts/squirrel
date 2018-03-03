@@ -13,9 +13,14 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(R.layout.activity_main)
         initFirebaseStuff()
+        setupSlidingBetweenPages()
        /* recyclerView_event_list.setOnClickListener {
             doShit()
         }*/
+    }
+
+    private fun setupSlidingBetweenPages() {
+
     }
 
     private fun initFirebaseStuff() {

@@ -1,9 +1,4 @@
-package com.aliciareesealex.squirrelhack;
-
-import java.io.FileOutputStream;
-import java.io.Serializable;
-import java.io.File;
-import java.util.HashMap;
+package com.aliciareesealex.squirrelhack.model;
 
 /**
  * Created by ducoterra on 3/3/2018.
@@ -15,6 +10,7 @@ public class Event {
 
     /**
      * Creates a new Event
+     *
      * @param name String name
      */
     public Event(String name) {
@@ -24,6 +20,7 @@ public class Event {
 
     /**
      * Increments the event count by 1
+     *
      * @return true if incremented
      */
     public boolean increment() {
@@ -44,6 +41,7 @@ public class Event {
 
     /**
      * returns the current count of events
+     *
      * @return int the number of times the event happened
      */
     public int getCount() {
@@ -52,6 +50,7 @@ public class Event {
 
     /**
      * resets the count of an event to zero (like at the end of the day)
+     *
      * @return true if reset
      */
     public boolean resetCount() {
@@ -61,6 +60,7 @@ public class Event {
 
     /**
      * gets the name of the current event
+     *
      * @return String name
      */
     public String getName() {
@@ -69,6 +69,7 @@ public class Event {
 
     /**
      * sets the name of an event
+     *
      * @return true if name set
      */
     public boolean setName(String newName) {
@@ -78,6 +79,7 @@ public class Event {
 
     /**
      * converts an Event to a string
+     *
      * @return String name:count
      */
     @Override
