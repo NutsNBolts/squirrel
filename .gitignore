@@ -211,3 +211,5 @@ $RECYCLE.BIN/
 !/google-services.json
 
 \.idea/caches/build_file_checksums\.ser
+
+\.idea/caches/
