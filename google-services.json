@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "638503982139",
+    "firebase_url": "https://squirrelhack-cf309.firebaseio.com",
+    "project_id": "squirrelhack-cf309",
+    "storage_bucket": "squirrelhack-cf309.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638503982139:android:22727cce50214993",
+        "android_client_info": {
+          "package_name": "com.aliciareesealex.squirrelhack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "638503982139-mc6co8b2os00pgm18kht8rvgs6crqjp0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aliciareesealex.squirrelhack",
+            "certificate_hash": "7fef8bd8639386840a63611eaf008af8e0fe95ad"
+          }
+        },
+        {
+          "client_id": "638503982139-kk4p4onv2g61gcubg3fsqglhp60krsok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPrdtI0QLq7XTG9YfrwR5ZgHeeJJYCP-E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "638503982139-kk4p4onv2g61gcubg3fsqglhp60krsok.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
