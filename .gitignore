@@ -209,3 +209,5 @@ $RECYCLE.BIN/
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 !/google-services.json
+
+\.idea/caches/build_file_checksums\.ser
