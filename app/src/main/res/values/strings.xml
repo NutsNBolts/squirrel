@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SquirrelHack</string>
+    <string name="Monday" > M </string>
+    <string name="Tuesday" > T </string>
+    <string name="Wednesday" > W </string>
+    <string name="Thursday" > T </string>
+    <string name="Friday" > F </string>
+    <string name="Saturday" > S </string>
+    <string name="Sunday" > S </string>
 </resources>
