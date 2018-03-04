@@ -1,10 +1,6 @@
 package com.aliciareesealex.squirrelhack.model;
 
-import java.io.FileOutputStream;
-import java.io.Serializable;
-import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by ducoterra on 3/3/2018.
@@ -18,6 +14,17 @@ public class EventList {
      */
     public EventList() {
         this.events = new ArrayList<>();
+    }
+
+    /**
+     * @return the size of the array of events
+     */
+    public int size() {
+        return this.events.size();
+    }
+
+    public ArrayList<EventList.Event> getList() {
+        return this.events;
     }
 
     public boolean isEmpty() {
