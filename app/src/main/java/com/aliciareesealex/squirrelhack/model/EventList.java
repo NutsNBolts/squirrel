@@ -26,14 +26,31 @@ public class EventList {
 	public ArrayList<EventList.Event> getList() {
 		return this.events;
 	}
-	
+
+	/**
+	 * @return the total points in the event list
+	 */
+	public int total() {
+		int result = 0;
+		for (Event e : this.events) {
+			result += e.count;
+		}
+		return result;
+	}
+
+	/**
+	 * @return true if no events, false if otherwise
+	 */
 	public boolean isEmpty() {
 		if (this.events.size() == 0) {
 			return true;
 		}
 		return false;
 	}
-	
+
+	/**
+	 * @return true if all events cleared from EventList
+	 */
 	public boolean clear() {
 		this.events = new ArrayList<>();
 		return true;

@@ -79,6 +79,19 @@ public class EventTest {
     }
 
     @Test
+    public void total() throws Exception {
+        eList.clear();
+        EventList.Event test1 = eList.addEvent("Test1");
+        EventList.Event test2 = eList.addEvent("Test2");
+
+        test1.increment();
+        test1.increment();
+        test2.increment();
+
+        assertEquals(eList.total(), 3);
+    }
+
+    @Test
     public void toCsvList() throws Exception {
         String data = "Test1,13\nTest2,39\nTest3,3\n";
         eList.clear();
