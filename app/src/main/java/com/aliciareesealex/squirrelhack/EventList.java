@@ -20,6 +20,18 @@ public class EventList {
         this.events = new ArrayList<>();
     }
 
+    public boolean isEmpty() {
+        if (this.events.size() == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean clear() {
+        this.events = new ArrayList<>();
+        return true;
+    }
+
     /**
      * @param name the name of the event
      * @return an Event object
@@ -37,21 +49,30 @@ public class EventList {
      * Name3,Count3
      * Name4,Count4
      */
-    public String toCsv() {
+    public String toCsvList() {
         String result = "";
         for (Event e : this.events) {
-            result = e.toCsv() + "\n";
+            result += e.toCsv() + "\n";
         }
         return result;
     }
 
-    public boolean fromCsv(String csv) {
+    /**
+     * @param csv a list of comma separated values:
+     * Name1,Count1
+     * Name2,Count2
+     * Name3,Count3
+     * Name4,Count4
+     * @return
+     */
+    public boolean fromCsvList(String csv) {
         String[] events = csv.split("\n");
         int currentLine = 0;
 
         for (String e : events) {
             Event newEvent = new Event();
             newEvent.fromCsv(events[currentLine]);
+            this.events.add(newEvent);
             currentLine++;
         }
 

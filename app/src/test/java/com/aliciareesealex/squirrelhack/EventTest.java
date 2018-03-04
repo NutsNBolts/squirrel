@@ -69,4 +69,31 @@ public class EventTest {
         assertEquals(e.fromCsv(data), true);
         assertEquals(e.getCount(), 13);
     }
+
+    @Test
+    public void clear() throws Exception {
+        eList.addEvent("Name");
+        assertEquals(eList.isEmpty(), false);
+    }
+
+    @Test
+    public void toCsvList() throws Exception {
+        String data = "Test1,13\nTest2,39\nTest3,3\n";
+        eList.clear();
+        assertEquals(eList.isEmpty(), true);
+        eList.fromCsvList(data);
+        assertEquals(eList.isEmpty(), false);
+        assertEquals(eList.toCsvList(), data);
+    }
+
+    @Test
+    public void fromCsvList() throws Exception {
+        String data = "Test1,13\nTest2,39\nTest3,3\n";
+        eList.clear();
+        assertEquals(eList.isEmpty(), true);
+        eList.fromCsvList(data);
+        assertEquals(eList.isEmpty(), false);
+        assertEquals(eList.toCsvList(), data);
+}
+
 }
