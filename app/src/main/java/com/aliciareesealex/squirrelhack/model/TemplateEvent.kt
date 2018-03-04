@@ -29,7 +29,12 @@ class TemplateEvent {
                 "Wave hi to someone",
                 "Clean a general area",
                 "Threw away your trash",
-                "Cleaned up after yourself")
+                "Cleaned up after yourself",
+                "Finish a tube of chapstick",
+                "Finish a stick of deoderant",
+                "Trust catch someone"
+
+        )
     }
 
     //    ======================== INTERFACE OVERRIDE METHODS ========================
