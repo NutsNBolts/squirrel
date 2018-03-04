@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity
 import com.aliciareesealex.squirrelhack.R
 import com.aliciareesealex.squirrelhack.ui.cur_event_list.CurrEventListFragment
 import com.aliciareesealex.squirrelhack.ui.daily_data.DailyDataFragment
-import com.aliciareesealex.squirrelhack.ui.prev_event_list.PrevEventListFragment
 import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupViewPager() {
-        val fragList = listOf(CurrEventListFragment(), DailyDataFragment(), PrevEventListFragment())
+        val fragList = listOf(CurrEventListFragment(), DailyDataFragment())
         val pagerAdapter = SquirrelPageAdapter(supportFragmentManager, fragList)
         viewpager_main_page.adapter = pagerAdapter
     }

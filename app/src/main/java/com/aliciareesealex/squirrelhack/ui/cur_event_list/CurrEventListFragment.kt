@@ -37,6 +37,8 @@ class CurrEventListFragment : Fragment() {
     }
 
     private fun updateTextVIew() {
+//        val timer = Timer()
+//        timer.schedule(2000)
         // start some dummy thread that is different from UI thread
         Thread(Runnable {
             // performing some dummy time taking operation
@@ -44,11 +46,18 @@ class CurrEventListFragment : Fragment() {
 //            while(i<Int.MAX_VALUE){
 //                i++
 //            }
-
-            // try to touch View of UI thread
-            activity?.runOnUiThread(java.lang.Runnable {
-                textView_total_num.text = eList.total().toString()
-            })
+            val isInterrupted = false
+            while (!isInterrupted) {
+                Thread.sleep(1000)
+                activity?.runOnUiThread(java.lang.Runnable {
+                    textView_total_num.text = eList.total().toString()
+                })
+            }
+//
+//            // try to touch View of UI thread
+//            activity?.runOnUiThread(java.lang.Runnable {
+//                textView_total_num.text = eList.total().toString()
+//            })
         }).start()
     }
 
