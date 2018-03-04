@@ -3,6 +3,7 @@ package com.aliciareesealex.squirrelhack
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.GridLayoutManager
 import com.aliciareesealex.squirrelhack.ui.daily_data.DailyDataFragment
 import com.aliciareesealex.squirrelhack.ui.cur_event_list.EventListFragment
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -17,16 +18,19 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(R.layout.activity_main)
         initFirebaseStuff()
-
-        val fragList = listOf<Fragment>(EventListFragment(), DailyDataFragment())
-        val pagerAdapter = SquirrelPageAdapter(supportFragmentManager, fragList)
-        viewpager_main_page.adapter = pagerAdapter
-
+        setupViewPager()
 
         /* recyclerView_event_list.setOnClickListener {
              doShit()
          }*/
     }
+
+    private fun setupViewPager() {
+        val fragList = listOf<Fragment>(EventListFragment(), DailyDataFragment())
+        val pagerAdapter = SquirrelPageAdapter(supportFragmentManager, fragList)
+        viewpager_main_page.adapter = pagerAdapter
+    }
+
     private fun initFirebaseStuff() {
         firebaseAnalyticsService = FirebaseAnalytics.getInstance(this)
     }
