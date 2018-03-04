@@ -1,4 +1,4 @@
-package com.aliciareesealex.squirrelhack;
+package com.aliciareesealex.squirrelhack.model;
 
 import java.io.FileOutputStream;
 import java.io.Serializable;

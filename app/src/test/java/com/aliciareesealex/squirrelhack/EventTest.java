@@ -1,5 +1,7 @@
 package com.aliciareesealex.squirrelhack;
 
+import com.aliciareesealex.squirrelhack.model.EventList;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
