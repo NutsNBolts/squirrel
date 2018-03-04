@@ -23,7 +23,7 @@ private const val ARG_PARAM2 = "param2"
  *
  */
 class CurrEventListFragment : Fragment() {
-
+    private val eList = loadEvents()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -32,7 +32,24 @@ class CurrEventListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 //        super.onViewCreated(view, savedInstanceState)
+        updateTextVIew()
         setAdapter()
+    }
+
+    private fun updateTextVIew() {
+        // start some dummy thread that is different from UI thread
+        Thread(Runnable {
+            // performing some dummy time taking operation
+//            var i=0;
+//            while(i<Int.MAX_VALUE){
+//                i++
+//            }
+
+            // try to touch View of UI thread
+            activity?.runOnUiThread(java.lang.Runnable {
+                textView_total_num.text = eList.total().toString()
+            })
+        }).start()
     }
 
 
@@ -45,7 +62,7 @@ class CurrEventListFragment : Fragment() {
         recyclerView_event_list.layoutManager = layoutManager
 
 //        Grabs images to be loaded into RecyclerView
-        val eventsList = loadEvents()
+        val eventsList = eList
 
 //        Sets adapter for page
         val eventlistAdapter = CurrEventRecyclerAdapter(eventsList)

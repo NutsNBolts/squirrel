@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         initFirebaseStuff()
         setupViewPager()
 
+
         /* recyclerView_event_list.setOnClickListener {
              doShit()
          }*/
