@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import com.aliciareesealex.squirrelhack.ui.daily_data.DailyDataFragment
-import com.aliciareesealex.squirrelhack.ui.event_list.EventListFragment
+import com.aliciareesealex.squirrelhack.ui.cur_event_list.EventListFragment
 import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.android.synthetic.main.activity_main.*
 

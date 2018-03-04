@@ -1,4 +1,4 @@
-package com.aliciareesealex.squirrelhack.ui.event_list
+package com.aliciareesealex.squirrelhack.ui.cur_event_list
 
 
 import android.os.Bundle
@@ -24,6 +24,23 @@ class EventListFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_event_list, container, false)
+
+        //        Ensures that the actual size of the RView doesn't change
+        recyclerView_explore_images.hasFixedSize()
+
+        //        Sets # of columns in grid
+        val numberOfColumns = 2
+        val layoutManager = GridLayoutManager(context, numberOfColumns)
+
+        //        Sets recyclerview's layout manager to the one just created
+        recyclerView_explore_images.layoutManager = layoutManager
+
+        //        Grabs images to be loaded into RecyclerView
+        val urlList = presenter.loadImages()
+
+        //        Sets adapter for page
+        val homepageAdapter = HomepageRecyclerAdapter(urlList)
+        recyclerView_explore_images.adapter = homepageAdapter
     }
 
 
