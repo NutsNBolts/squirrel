@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import com.aliciareesealex.squirrelhack.R
+import com.aliciareesealex.squirrelhack.model.EventList
 import kotlinx.android.synthetic.main.itemview_event.view.*
 
 /**
@@ -16,7 +17,8 @@ import kotlinx.android.synthetic.main.itemview_event.view.*
 class PrevEventRecyclerAdapter(val eList: EventList): RecyclerView.Adapter<PrevEventRecyclerAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.plusBtn.setOnClickListener {  }
+        holder.plusBtn.setOnClickListener { eList.list[position].increment() }
+        holder.plusBtn.setOnClickListener { eList.list[position].decrement() }
     }
 
     override fun getItemCount(): Int {
