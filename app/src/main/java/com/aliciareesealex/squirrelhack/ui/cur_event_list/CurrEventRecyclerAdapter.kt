@@ -30,12 +30,17 @@ class CurrEventRecyclerAdapter(private val eventList: EventList) : RecyclerView.
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.eventName.text = eventList.list[position].name
+        holder.pointValue.text = eventList.list[position].count.toString()
+
         holder.plusButton.setOnClickListener {
             eventList.list[position].increment()
+            holder.pointValue.text = eventList.list[position].count.toString()
         }
 
         holder.minusButton.setOnClickListener {
             eventList.list[position].decrement()
+            holder.pointValue.text = eventList.list[position].count.toString()
         }
     }
     //    ======================== USER METHODS ========================

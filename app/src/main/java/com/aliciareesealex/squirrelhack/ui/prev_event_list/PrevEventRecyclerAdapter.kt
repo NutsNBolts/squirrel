@@ -14,15 +14,17 @@ import kotlinx.android.synthetic.main.itemview_event.view.*
  * Created by ducot on 3/3/2018.
  */
 
-class PrevEventRecyclerAdapter(val eList: EventList): RecyclerView.Adapter<PrevEventRecyclerAdapter.ViewHolder>() {
+class PrevEventRecyclerAdapter(private val eList: EventList): RecyclerView.Adapter<PrevEventRecyclerAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.eventName.text = eList.list[position].name
+        holder.countValue.text = eList.list[position].count.toString()
         holder.plusBtn.setOnClickListener { eList.list[position].increment() }
-        holder.plusBtn.setOnClickListener { eList.list[position].decrement() }
+        holder.minBtn.setOnClickListener { eList.list[position].decrement() }
     }
 
     override fun getItemCount(): Int {
-        return events.size
+        return eList.size()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,7 +32,7 @@ class PrevEventRecyclerAdapter(val eList: EventList): RecyclerView.Adapter<PrevE
         return ViewHolder(v)
     }
 
-    class ViewHolder(itemView: View) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val eventName: TextView = itemView.findViewById(R.id.textView_event_name)
         val countValue: TextView = itemView.findViewById(R.id.textView_event_count)
         val plusBtn: ImageButton = itemView.findViewById(R.id.imageButton_plus)
